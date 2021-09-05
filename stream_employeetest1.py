@@ -1,4 +1,4 @@
-from pycaret.classification import load_model, predict model
+from pycaret.classification import load_model, predict_model
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -13,7 +13,7 @@ def run():
     from PIL import Image
     image = Image.open('employeeleftimage.jpg')
     image_office=Image.open('office.jpg')
-    st.image (image, use_column_Width=True)
+    st.image (image, use_column_width=True)
     add_selectbox = st.sidebar.selectbox(
      "How would you like to predict?",
      ("Online", "Batch"))
