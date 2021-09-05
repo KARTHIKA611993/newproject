@@ -17,22 +17,29 @@ def run():
     add_selectbox = st.sidebar.selectbox(
      "How would you like to predict?",
      ("Online", "Batch"))
+    
   st.sidebar.info('This app is created to predict if an employee will leave the company')
+
   st.sidebar.success('https://www.pycaret.org')
+    
   st.sidebar.image(image_office)
+
   st.title("Predicting employee leaving")
+    
   if add_selectbox == 'Online':
                        
      satisfaction_level=st.number_input('satisfaction_level', min_value=0.1, max_value=1.0, value=0.1)
      last_evaluation =st.number_input ( 'last_evaluation' ,min_value=0.1, max_value=1.0, value=0.1)
      number_project = st.number_input ( 'number_project' , min_value=0, max_value=50, value=5)
     average_montly_hours=st.number_input('average_montly_hours',min_value=0, max_value=500,value=200)
-
     time_spend_company=st.number_input ( 'time_spend_company' , min_value=1, max_value=10, value=3)
     Work_accident = st.number_input('Work_accident', min_value=0, max_value=50, value=0)
     promotion_last_5years=st.number_input('promotion_last_5years', min_value=0, max_value=50, value=0)
-    salary=st.selectbox('salary', ['low', 'high','medium'])
+    
+    salary = st.selectbox('salary', ['low', 'high','medium'])
+    
     output=""
+    
     input_dict={'satisfaction_level' :satisfaction_level, 'last_evaluation': last_evaluation, 'number_project' :number_project, 'average_montly_hours' :average_ 
     input_df=pd.DataFrame([input_dict])
     if st.button("Predict"):
